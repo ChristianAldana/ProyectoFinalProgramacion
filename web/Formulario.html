@@ -54,7 +54,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <div class="d-flex justify-content-around">
         <div class="p-3 bd-highlight">
         <h1>Formulario de Registro Alumnos</h1>
-        <a href="NewServlet" > </a><br><br>
+        <a href="/NewServlet" > </a><br><br>
         <form method="POST" id="form" name="form" action="NewServlet" >
             <div class="form-group">
                 <label for="exampleInputName">Nivel academico</label>
@@ -90,8 +90,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </div>
             
             <select class="form-control" name="opcion">
-                <option value="1">Masculino</option>
-                <option value="2">Femenino</option>
+                <option value="1">1 = Masculino</option>
+                <option value="2">2 = Femenino</option>
             </select><br>
             <button type="submit" class="btn btn-primary">Guardar</button>
               <button type="button" onclick="enviarFormularioOpcion2()" class="btn btn-success">Guardar con JS</button>
@@ -112,8 +112,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             <td>Nombre del Estudiante</td>
                             <td>Dirección</td>
                             <td>Correo Institucional</td>
-                            <td>Tipo</td>
-                            <td>Acción</td>
+                            <td>Sexo</td>
                         </tr>
                     </thead>
                     <tbody id="bodyTable">
