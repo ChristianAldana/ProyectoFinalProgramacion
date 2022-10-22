@@ -35,14 +35,14 @@ public class AlumnoController {
     public Alumno[] getAlumnos(){
         return this.tablaALumno;
     }
-    /*
+    
     public void abrirConexion(){
         conectorBD= new ConexionBaseDeDatos();
         conexion=conectorBD.conectar();
     }
     
     public boolean guardarAlumno2(Alumno alumno){        
-        String sql = "INSERT INTO universidad.alumno(numero_carne, nombre, correo, genero_idgenero) ";
+        String sql = "INSERT INTO Systemae.alumno(idAlumno, Profesor, seccion, codigo, correo, direccion ) "; //las tabla del sql
              sql += " VALUES( ?,?,?,?)"; 
         try{
             abrirConexion();
@@ -61,6 +61,4 @@ public class AlumnoController {
             return false;
         }    
     }
-    
-    */
 }
