@@ -1,116 +1,1033 @@
+﻿  <!--Christian Aldana 0909-21-697 -->
 <!DOCTYPE html>
-<!-- 
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
+<html lang="en">
 
- <!-- Author     : Christian-->
+<head>
+  <!-- Etiquetas fundamentales -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>DASHBOARD</title>
 
-<html>
-    <head>
-         <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>Login</title>
-  </head>
-    <body>
-       <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="#" class="sign-in-form">
-            <h2 class="title">INICIO</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Login" class="btn solid" />
-            <p class="social-text"> Iniciar sesión con Redes sociales</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </form>
-          <form action="#" class="sign-up-form">
-            <h2 class="title">Registrarse</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" class="btn" value="Inicia sesión " />
-            <p class="social-text">Iniciar sesión con Redes sociales</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </form>
-        </div>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors\mdi\css\materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors\simple-line-icons\css\simple-line-icons.css">
+  <link rel="stylesheet" href="vendors\flag-icon-css\css\flag-icon.min.css">
+  <link rel="stylesheet" href="vendors\css\vendor.bundle.base.css">
+  
+  <!-- plugins para el index -->
+  <link rel="stylesheet" href="vendors\font-awesome\css\font-awesome.min.css">
+  <link rel="stylesheet" href="vendors\jquery-bar-rating\fontawesome-stars.css">
+
+  <!-- Conexion con css -->
+  <link rel="stylesheet" href="css\style.css">
+  
+  <link rel="shortcut icon" href="images\favicon.png">
+</head>
+  <!-- Final del encabezado y conexiones -->
+
+  
+<body>
+  <div class="container-scroller">
+    <!-- SECCION DEL NAVBAR -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="index.html"><img src="images\logo.png" alt="logo"></a>
       </div>
+      
+        <!-- SECCION DE LA CONFIGURACION DE LA CUENTA -->
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown d-none d-lg-flex">
+            <a class="nav-link dropdown-toggle nav-btn" id="actionDropdown" href="#" data-toggle="dropdown">
+              <span class="btn">+ Account</span>
+            </a>
+            <!-- Crear un nuevo usuario, rol del usuario y reporte del usuario -->
+            <div class="dropdown-menu navbar-dropdown dropdown-left" aria-labelledby="actionDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="icon-user text-primary"></i>
+                Nuevo usuario
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <i class="icon-user-following text-warning"></i>
+                Rol: Coordinador
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <i class="icon-docs text-success"></i>
+                 Reporte
+              </a>
+            </div>
+          </li>
+        </ul>
 
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>Crea un nuevo usuario</h3>
-            <p>
-              Login para el registro de reportes ejecutivos para 
-              la toma de decisiones del ministro de educación en conjunto con el señor presidente. 
-            </p>
-            <button class="btn transparent" id="sign-up-btn">
-              Registrarse
-            </button>
-          </div>
-          <img src="img/register.svg" class="image" alt="" />
-        </div>
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>¿Ya tienes una cuenta ?</h3>
-            <p>
-              Si ya te has registrado por favor inica sesion
-            </p>
-            <button class="btn transparent" id="sign-in-btn">
-              Inicia sesión 
-            </button>
-          </div>
-          <img src="img/ESCUELA.png" class="image" alt="" />
-        </div>
+              <!-- SECCION DE LOS IDIOMAS DISPONIBLES -->
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown d-none d-lg-flex">
+            <a class="nav-link dropdown-toggle" id="languageDropdown" href="#" data-toggle="dropdown">
+              <i class="flag-icon flag-icon-es"></i>
+              Español
+            </a>
+            <div class="dropdown-menu navbar-dropdown" aria-labelledby="languageDropdown">
+              <a class="dropdown-item font-weight-medium" href="#">
+                <i class="flag-icon flag-icon-fr"></i>
+                Proximamente
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item font-weight-medium" href="#">
+                <i class="flag-icon flag-icon-gb"></i>
+                Proximamente
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item font-weight-medium" href="#">
+                <i class="flag-icon flag-icon-lt"></i>
+                Proximamente
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item font-weight-medium" href="#">
+                <i class="flag-icon flag-icon-ae"></i>
+                Proximamente
+              </a>
+            </div>
+          </li>
+          
+                        <!-- SECCION DE LAS NOTIFICACIONES RECIENTES -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="icon-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <a class="dropdown-item">
+                <p class="mb-0 font-weight-normal float-left">Tienes nuevas notificaciones
+                </p>
+                <span class="badge badge-pill badge-warning float-right">Ver notificaciones</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="icon-info mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-medium">Nuevo registro de alumno</h6>
+                  <p class="font-weight-light small-text">
+                    Justo ahora.
+                  </p>
+                </div>
+              </a> 
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="icon-envelope mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-medium">Registros ya realizados!</h6>
+                  <p class="font-weight-light small-text">
+                    Hace 2 dias.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+
+                        <!-- SECCION DE LOS ALUMNOS RECIEN AGREGADOS -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <i class="icon-envelope mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+              <div class="dropdown-item">
+                <p class="mb-0 font-weight-normal float-left">Alumnos recien agregados.
+                </p>
+                <span class="badge badge-info badge-pill float-right">Ver todo</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="images\faces\Carlos.jpeg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium">Carlos Gonzales
+                    <span class="float-right font-weight-light small-text">1 Minuto atras</span>
+                  </h6>
+                  <p class="font-weight-light small-text">
+                    Alumno registrado exitosamente.!
+                  </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="images\faces\Brandon.jpeg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium">Brandon Amperez
+                    <span class="float-right font-weight-light small-text">15 Minutos atras</span>
+                  </h6>
+                  <p class="font-weight-light small-text">
+                    Alumno registrado exitosamente!
+                  </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="images\faces\Yulmi.jpeg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium"> Yulmi Contreras
+                    <span class="float-right font-weight-light small-text">18 Minutos atras</span>
+                  </h6>
+                  <p class="font-weight-light small-text">
+                    Alumna registrado exitosamente!
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item nav-settings d-none d-lg-block">
+            <a class="nav-link" href="#">
+              <i class="icon-grid"></i>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
       </div>
+    </nav>
+    <!-- FIN DEL NAVBAR -->
+    
+
+    
+           <!-- SECCION DEL PANEL DE RECORDATORIO-->
+    <div class="container-fluid page-body-wrapper">
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <!-- SECCION DE LA CONFIGURACION DEL PANEL -->
+        <div class="theme-setting-wrapper">
+          <div id="settings-trigger"><i class="mdi mdi-settings"></i></div>
+          <div id="theme-settings" class="settings-panel">
+            <i class="settings-close mdi mdi-close"></i>
+
+            <!-- SECCION DE LOS COLORES-->
+            <p class="settings-heading">TIPO DE COLORES</p>
+            <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Modo normal</div>
+            <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Modo nocturno</div>
+            <p class="settings-heading mt-2">Customizar</p>
+            <div class="color-tiles mx-0 px-4">
+              <div class="tiles primary"></div>
+              <div class="tiles success"></div>
+              <div class="tiles warning"></div>
+              <div class="tiles danger"></div>
+              <div class="tiles pink"></div>
+              <div class="tiles info"></div>
+              <div class="tiles dark"></div>
+              <div class="tiles default"></div>
+            </div>
+          </div>
+        </div>
+        <div id="right-sidebar" class="settings-panel">
+          <i class="settings-close mdi mdi-close"></i>
+          <ul class="nav nav-tabs" id="setting-panel" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+          <div class="tab-content" id="setting-content">
+            <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
+              <div class="add-items d-flex px-3 mb-0">
+                <form class="form w-100">
+                  <div class="form-group d-flex">
+                    <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                    <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
+                  </div>
+                </form>
+              </div>
+              <div class="list-wrapper px-3">
+                <ul class="d-flex flex-column-reverse todo-list">
+                  
+                  <li>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox" type="checkbox">
+                        Preparar los reportes.
+                      </label>
+                    </div>
+                    <i class="remove mdi mdi-close-circle-outline"></i>
+                  </li>
+                  <li>  
+                </ul>
+              </div>
+              
+              <div class="events pt-4 px-3">
+                <div class="wrapper d-flex mb-2">
+                  <i class="mdi mdi-circle-outline text-primary mr-2"></i>
+                  <span>29 de octubre de 2022</span>
+                </div>
+                <p class="mb-0 font-weight-thin text-gray">Reunion con el presidente para entrega de los reportes</p>
+                
+              </div>
+            </div>
+            <!-- FIN DE LA SECCION DE RECORDATORIOS -->
+          </div>
+        </div>
+
+
+            <!-- SECCION DEL PERFIL  -->
+
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <div class="nav-link">
+                <div class="profile-image">
+                  <img src="images\faces\face26.jpeg" alt="image">
+                  <span class="online-status online"></span> <!-- offline Si se quiere inactivar el perfil-->
+                </div>
+                <div class="profile-name">
+                  <p class="name">
+                    Christian
+                  </p>
+                  <p class="designation">
+                    Coordinador
+                  </p>
+                </div>
+              </div>
+            </li>
+
+             <!-- SECCION DEL AREA DE BOTONES VERTICAL  -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="icon-rocket menu-icon"></i>
+                    <!-- SECCION DEL AREA DASHBOARD  -->
+                <span class="menu-title">Dashboard</span>
+                <span class="badge badge-success">Estadisticas</span>
+              </a>
+            </li>
+
+                         <!-- SECCION DEL AREA DE ELEMENTOS AVANZADOS  -->
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
+                <i class="icon-cup menu-icon"></i>
+                <span class="menu-title"> Avanzados</span>
+                <span class="badge badge-primary">2</span>
+              </a>
+              <div class="collapse" id="ui-advanced">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages\ui-features\dragula.html">Reporte</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages\ui-features\carousel.html">Carousel</a></li>
+                </ul>
+              </div>
+            </li>
+
+                         <!-- SECCION DEL AREA FORMULARIOS  -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                <i class="icon-flag menu-icon"></i>
+                <span class="menu-title">Formularios</span>
+                <span class="badge badge-danger">1</span>
+              </a>
+              <div class="collapse" id="form-elements">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"><a class="nav-link" href="pages\forms\wizard.html">Registro</a></li>
+                </ul>
+              </div>
+            </li>
+
+             <!-- SECCION DE GRAFICAS  -->
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                <i class="icon-pie-chart menu-icon"></i>
+                <span class="menu-title">Graficas</span>
+                <span class="badge badge-warning">4</span>
+              </a>
+              <div class="collapse" id="charts">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages\charts\chartjs.html">Grafica A</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages\charts\flot-chart.html">Grafica B</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages\charts\c3.html">Grafica C</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages\charts\chartist.html">Grafica D</a></li>
+                </ul>
+                </div>
+            </li>
+
+                         <!-- SECCION DE TABLAS  -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                <i class="icon-grid menu-icon"></i>
+                <span class="menu-title">Tablas</span>
+                <span class="badge badge-info">3</span>
+              </a>
+              <div class="collapse" id="tables">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages\tables\basic-table.html">Tabla Basica</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages\tables\data-table.html">Tabla De Datos</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages\tables\js-grid.html">Lista Alumnos</a></li>
+                </ul>
+              </div>
+            </li>
+            
+                         <!-- SECCION DE CALENDARIO  -->
+            <li class="nav-item">
+              <a class="nav-link" href="pages\apps\calendar.html">
+                <i class="icon-calendar menu-icon"></i>
+                <span class="menu-title">calendario</span>
+              </a>
+            </li>
+
+                                     <!-- SECCION DE LISTA DE ALUMNOS REGISTRADOS  -->
+            <li class="nav-item">
+              <a class="nav-link" href="pages\apps\todo.html">
+                <i class="icon-clock menu-icon"></i>
+                <span class="menu-title">Todo List</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+
+         
+        
+
+
+
+
+
+
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-md-center">
+                    <i class="mdi mdi-basket icon-lg text-success"></i>
+                    <div class="ml-3">
+                      <p class="mb-0">Daily Order</p>
+                      <h6>12569</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-md-center">
+                    <i class="mdi mdi-rocket icon-lg text-warning"></i>
+                    <div class="ml-3">
+                      <p class="mb-0">Tasks Completed</p>
+                      <h6>2346</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-md-center">
+                    <i class="mdi mdi-diamond icon-lg text-info"></i>
+                    <div class="ml-3">
+                      <p class="mb-0">Monthly Sales</p>
+                      <h6>896546</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-md-center">
+                    <i class="mdi mdi-chart-line-stacked icon-lg text-danger"></i>
+                    <div class="ml-3">
+                      <p class="mb-0">Total Revenue</p>
+                      <h6>$ 56000</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 d-flex flex-column">
+              <div class="row flex-grow">
+                <div class="col-12 col-md-4 col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h6 class="card-title">Growth</h6>
+                      <div class="row">
+                        <div class="col-12 text-center">
+                          <div class="row">
+                            <div class="col-6 border-right">
+                              <h4>63%</h4>
+                              <p>Monthly</p>
+                            </div>
+                            <div class="col-6">
+                              <h4>20%</h4>
+                              <p>Daily</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center mt-3">
+                        <div id="growth-chart">
+                            7, 10, 11, 9, 11, 16, 12, 15, 13, 8, 12, 10, 13, 10, 16, 15, 12, 8, 10, 7, 16, 12, 8, 9, 7, 12
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-12 grid-margin stretch-card">
+                  <div class="card bg-info">
+                    <div class="text-white py-3 px-4">
+                      <h6 class="card-title text-white mb-0">Page View</h6>
+                      <p>3669.25</p>
+                      <div class="chart-container">
+                        <canvas class="w-100 h-100" id="dashboard-lineChart-2" height="50"></canvas>
+                      </div>
+                      <small class="text-white">View Details</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-12 grid-margin stretch-card">
+                  <div class="card bg-success">
+                    <div class="text-white py-3 px-4">
+                      <h6 class="card-title text-white mb-0">Donations</h6>
+                      <p>$56569</p>
+                      <div class="chart-container">
+                        <canvas class="w-100 h-100" id="dashboard-lineChart-3" height="50"></canvas>
+                      </div>
+                      <small class="text-white">View Details</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Daily Sales</h6>
+                  <div class="w-75 mx-auto">
+                    <div class="d-flex justify-content-between text-center">
+                      <div class="wrapper">
+                        <h4>$2256</h4>
+                        <small class="text-muted">Totel sales</small>
+                      </div>
+                      <div class="wrapper">
+                        <h4>584</h4>
+                        <small class="text-muted">Compaign</small>
+                      </div>
+                    </div>
+                    <div id="dashboard-donut-chart" style="height:250px"></div>
+                  </div>
+                  <div id="legend" class="donut-legend"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Total Revenue</h6>
+                  <div class="w-75 mx-auto">
+                    <div class="d-flex justify-content-between text-center mb-5">
+                      <div class="wrapper">
+                        <h4>6,256</h4>
+                        <small class="text-muted">Totel sales</small>
+                      </div>
+                      <div class="wrapper">
+                        <h4>8569</h4>
+                        <small class="text-muted">Open Compaign</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="morris-line-example" style="height:250px;"></div>
+                  <div class="w-75 mx-auto">
+                    <div class="d-flex justify-content-between text-center mt-5">
+                      <div class="wrapper">
+                        <h4>5136</h4>
+                        <small class="text-muted">Online Sales</small>
+                      </div>
+                      <div class="wrapper">
+                        <h4>4596</h4>
+                        <small class="text-muted">Store Sales</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row grid-margin">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Order status</h6>
+                  <div class="d-flex table-responsive">
+                    <div class="btn-group mr-2">
+                      <button class="btn btn-sm btn-info"><i class="mdi mdi-plus-circle-outline"></i> Add</button>
+                    </div>
+                    <div class="btn-group mr-2">
+                      <button type="button" class="btn btn-light"><i class="mdi mdi-alert-circle-outline"></i></button>
+                      <button type="button" class="btn btn-light"><i class="mdi mdi-delete-empty"></i></button>
+                    </div>
+                    <div class="btn-group mr-2">
+                      <button type="button" class="btn btn-light"><i class="mdi mdi-printer"></i></button>
+                    </div>
+                    <div class="btn-group ml-auto mr-2 border-0">
+                      <input type="text" class="form-control" placeholder="Search Here">
+                    </div>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-light"><i class="mdi mdi-cloud"></i></button>
+                      <button type="button" class="btn btn-light"><i class="mdi mdi-dots-vertical"></i></button>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table mt-3 border-top">
+                      <thead>
+                        <tr>
+                          <th>Invoice</th>
+                          <th>Customer</th>
+                          <th>Ship</th>
+                          <th>Best Price</th>
+                          <th>Purchsed Price</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>50014</td>
+                          <td>David Grey</td>
+                          <td>Italy</td>
+                          <td>$6300</td>
+                          <td>$2100</td>
+                          <td><div class="badge badge-success badge-fw">Progress</div></td>
+                        </tr>
+                        <tr>
+                          <td>50015</td>
+                          <td>Stella Johnson</td>
+                          <td>Brazil</td>
+                          <td>$4500</td>
+                          <td>$4300</td>
+                          <td><div class="badge badge-warning badge-fw">Open</div></td>
+                        </tr>
+                        <tr>
+                          <td>50016</td>
+                          <td>Marina Michel</td>
+                          <td>Japan</td>
+                          <td>$4300</td>
+                          <td>$6440</td>
+                          <td><div class="badge badge-danger badge-fw">On hold</div></td>
+                        </tr>
+                        <tr>
+                          <td>50017</td>
+                          <td>John Doe</td>
+                          <td>India</td>
+                          <td>$6400</td>
+                          <td>$2200</td>
+                          <td><div class="badge badge-success badge-fw">Progress</div></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between flex-column flex-sm-row mt-4">
+                    <p class="mb-3 mb-sm-0">Showing 1 to 20 of 20 entries</p>
+                    <nav>
+                      <ul class="pagination pagination-info mb-0">
+                        <li class="page-item"><a class="page-link"><i class="mdi mdi-chevron-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link">1</a></li>
+                        <li class="page-item"><a class="page-link">2</a></li>
+                        <li class="page-item"><a class="page-link">3</a></li>
+                        <li class="page-item"><a class="page-link">4</a></li>
+                        <li class="page-item"><a class="page-link"><i class="mdi mdi-chevron-right"></i></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Monthly Analytics</h6>
+                  <p class="card-description">Products that are creating the most revenue and their sales throughout the year and the variation in behavior of sales.</p>
+                  <div id="js-legend" class="chartjs-legend mt-4 mb-5"></div>
+                  <div class="demo-chart">
+                    <canvas id="dashboard-monthly-analytics"></canvas>                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <h6 class="card-title">Activity</h6>
+                  </div>
+                  <p class="card-description">What's people doing right now</p>
+                  <div class="list d-flex align-items-center border-bottom py-3">
+                    <img class="img-sm rounded-circle" src="images\faces\face4.jpeg" alt="">
+                    <div class="wrapper w-100 ml-3">
+                      <p class="mb-0"><b>Dobrick </b>posted in Material</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="mdi mdi-clock text-muted mr-1"></i>
+                          <p class="mb-0">Awesome!</p>
+                        </div>
+                        <small class="text-muted ml-auto">2 hours ago</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list d-flex align-items-center border-bottom py-3">
+                    <img class="img-sm rounded-circle" src="images\faces\face5.jpeg" alt="">
+                    <div class="wrapper w-100 ml-3">
+                      <p class="mb-0"><b>Stella </b>posted in Material</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="mdi mdi-clock text-muted mr-1"></i>
+                          <p class="mb-0">Awesome!</p>
+                        </div>
+                        <small class="text-muted ml-auto">3 hours ago</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list d-flex align-items-center border-bottom py-3">
+                    <img class="img-sm rounded-circle" src="images\faces\face7.jpeg" alt="">
+                    <div class="wrapper w-100 ml-3">
+                      <p class="mb-0"><b>Peter </b>posted in Material</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="mdi mdi-clock text-muted mr-1"></i>
+                          <p class="mb-0">Great!</p>
+                        </div>
+                        <small class="text-muted ml-auto">1 hours ago</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list d-flex align-items-center pt-3">
+                    <img class="img-sm rounded-circle" src="images\faces\face6.jpeg" alt="">
+                    <div class="wrapper w-100 ml-3">
+                      <p class="mb-0"><b>Nateila </b>posted in Material</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                          <i class="mdi mdi-clock text-muted mr-1"></i>
+                          <p class="mb-0">Awesome!</p>
+                        </div>
+                        <small class="text-muted ml-auto">1 hours ago</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Sales Difference</h6>
+                  <p>Sales difference with last year</p>
+                </div>
+                <div id="morris-area-example"></div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h6 class="card-title">Sales Chart</h6>
+                  <p class="card-description">Based on last month analytics.</p>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-secondary">2015</button>
+                    <button type="button" class="btn btn-outline-secondary">2016</button>
+                  </div>
+                  <div id="morris-dashboard-bar-chart" style="height:250px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body pb-0">
+                  <h6 class="card-title">Reviews</h6>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="wrapper border-bottom py-2">
+                        <div class="d-flex">
+                          <img class="img-sm rounded-circle" src="images\faces\face2.jpeg" alt="">
+                          <div class="wrapper ml-4">
+                            <p class="mb-0">Sarah Graves</p>
+                            <small class="text-muted mb-0">Awesome!!! Highly recommend</small>
+                          </div>
+                          <div class="rating ml-auto d-flex align-items-center">
+                            <select id="dashboard-rating-2" name="rating">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="wrapper border-bottom py-2">
+                        <div class="d-flex">
+                          <img class="img-sm rounded-circle" src="images\faces\face1.jpeg" alt="">
+                          <div class="wrapper ml-4">
+                            <p class="mb-0">David Grey</p>
+                            <small class="text-muted mb-0">Not satisfied with the service.</small>
+                          </div>
+                          <div class="rating ml-auto d-flex align-items-center">
+                            <select id="dashboard-rating-1" name="rating">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="wrapper border-bottom py-2">
+                        <div class="d-flex">
+                          <img class="img-sm rounded-circle" src="images\faces\face3.jpeg" alt="">
+                          <div class="wrapper ml-4">
+                            <p class="mb-0">Burno mars</p>
+                            <small class="text-muted mb-0">Great!! It's the best</small>
+                          </div>
+                          <div class="rating ml-auto d-flex align-items-center">
+                            <select id="dashboard-rating-3" name="rating">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="wrapper py-2">
+                        <div class="d-flex">
+                          <img class="img-sm rounded-circle" src="images\faces\face4.jpeg" alt="">
+                          <div class="wrapper ml-4">
+                            <p class="mb-0">Dobrick</p>
+                            <small class="text-muted mb-0">Not worth the money.</small>
+                          </div>
+                          <div class="rating ml-auto d-flex align-items-center">
+                            <select id="dashboard-rating-4" name="rating">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 stretch-card">
+              <div class="row flex-grow">
+                <div class="col-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h6 class="card-title mb-0">Statistics</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-inline-block pt-3">
+                          <div class="d-lg-flex">
+                            <h2 class="mb-0">$10,200</h2>
+                            <div class="d-flex align-items-center ml-lg-2">
+                              <i class="mdi mdi-clock text-muted"></i>
+                              <small class="ml-1 mb-0">Updated: 9:10am</small>
+                            </div>
+                          </div>
+                          <small class="text-gray">Raised from 89 orders.</small>
+                        </div>
+                        <div class="d-inline-block">
+                          <div class="bg-success px-3 px-md-4 py-2 rounded">
+                            <i class="mdi mdi-buffer text-white icon-lg"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h6 class="card-title mb-0">Daily Order</h6>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-inline-block pt-3">
+                          <div class="d-lg-flex">
+                            <h2 class="mb-0">$2256</h2>
+                            <div class="d-flex align-items-center ml-lg-2">
+                              <i class="mdi mdi-clock text-muted"></i>
+                              <small class="ml-1 mb-0">Updated: 05:42pm</small>
+                            </div>
+                          </div>
+                          <small class="text-gray">hey, let’s have lunch together</small>
+                        </div>
+                        <div class="d-inline-block">
+                          <div class="bg-warning px-3 px-md-4 py-2 rounded">
+                            <i class="mdi mdi-wallet text-white icon-lg"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="wrapper d-md-flex align-items-center justify-content-center text-center text-md-left">
+                    <i class="mdi mdi-facebook icon-lg text-facebook"></i>
+                    <div class="wrapper ml-md-3">
+                      <p class="text-facebook mb-0 font-weight-medium">15k Likes</p>
+                      <small class="text-muted mb-0">You main list growing !</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="wrapper d-md-flex align-items-center justify-content-center text-center text-md-left">
+                    <i class="mdi mdi-twitter icon-lg text-twitter"></i>
+                    <div class="wrapper ml-md-3">
+                      <p class="text-twitter mb-0 font-weight-medium">18k followers</p>
+                      <small class="text-muted mb-0">There you are !</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="wrapper d-md-flex align-items-center justify-content-center text-center text-md-left">
+                    <i class="mdi mdi-linkedin icon-lg text-linkedin"></i>
+                    <div class="wrapper ml-md-3">
+                      <p class="text-linkedin mb-0 font-weight-medium">5k connections</p>
+                      <small class="text-muted mb-0">Going good !</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="wrapper d-flex align-items-center justify-content-start justify-content-sm-center">
+                    <img class="img-md rounded" src="images\faces\face1.jpeg" alt="">
+                    <div class="wrapper ml-4">
+                      <p class="mb-0 font-weight-medium">Tim Cook</p>
+                      <small class="text-muted mb-0">timcook@gmail.com</small>
+                      <p class="text-success mb-0 font-weight-medium">Designer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="wrapper d-flex align-items-center justify-content-start justify-content-sm-center">
+                    <img class="img-md rounded" src="images\faces\face2.jpeg" alt="">
+                    <div class="wrapper ml-4">
+                      <p class="mb-0 font-weight-medium">Sarah Graves</p>
+                      <small class="text-muted mb-0">Sarahgraves@gmail.com</small>
+                      <p class="text-success mb-0 font-weight-medium">Developer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="wrapper d-flex align-items-center justify-content-start justify-content-sm-center">
+                    <img class="img-md rounded" src="images\faces\face3.jpeg" alt="">
+                    <div class="wrapper ml-4">
+                      <p class="mb-0 font-weight-medium">David Grey</p>
+                      <small class="text-muted mb-0">David@gmail.com</small>
+                      <p class="text-success mb-0 font-weight-medium">Support Lead</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="container-fluid clearfix">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2017 <a href="#">UrbanUI</a>. All rights reserved.</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- content-wrapper ends -->
+      </div>
+      <!-- row-offcanvas ends -->
     </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
 
-    <script src="app.js"></script>
-  </body>
+  <!-- plugins:js -->
+  <script src="vendors\js\vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="vendors\jquery-bar-rating\jquery.barrating.min.js"></script>
+  <script src="vendors\chart.js\Chart.min.js"></script>
+  <script src="vendors\raphael\raphael.min.js"></script>
+  <script src="vendors\morris.js\morris.min.js"></script>
+  <script src="vendors\jquery-sparkline\jquery.sparkline.min.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js\off-canvas.js"></script>
+  <script src="js\hoverable-collapse.js"></script>
+  <script src="js\misc.js"></script>
+  <script src="js\settings.js"></script>
+  <script src="js\todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js\dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
 </html>
