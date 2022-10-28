@@ -53,15 +53,16 @@ public class NewServlet extends HttpServlet {
            
            if(control.toUpperCase().equals("GUARDAR")){
                alumno=new Alumno(
-                Integer.parseInt(request.getParameter("codigo")),
+               
                 request.getParameter("nivel"),
-                request.getParameter("profesor"),
                 request.getParameter("seccion"),
-                request.getParameter("nombre"),
+                request.getParameter("profesor"),
+                 request.getParameter("nombre"),
                 request.getParameter("correo"),
                 request.getParameter("direccion"),
-                
-                Integer.parseInt(request.getParameter("opcion")));                
+                Integer.parseInt(request.getParameter("codigo")),
+                Integer.parseInt(request.getParameter("codigo1")));  
+               
                 registroAlumno.guardarAlumno2(alumno);//almacenarlo en BD                 
            }else if(control.toUpperCase().equals("ELIMINAR")){
                int codigoEliminar= Integer.parseInt(request.getParameter("codigo_alumno"));
@@ -69,11 +70,11 @@ public class NewServlet extends HttpServlet {
            }
                         
             
-            //registroAlumno.guardarAlumno(alumno);//almacenarlo en el array
-            //alumnosRegistrados= registroAlumno.getAlumnos();// consultar alumnos en el array                       
+            registroAlumno.guardarAlumno(alumno);//almacenarlo en el array
+            alumnosRegistrados= registroAlumno.getAlumnos();// consultar alumnos en el array                       
                     
-           registroAlumno.getAlumnos2(objetoRespuesta);//consultar alumnos en la BD
-           respuesta.write(objetoRespuesta.toString());             
+          /* registroAlumno.getAlumnos2(objetoRespuesta);//consultar alumnos en la BD*/
+           respuesta.write(objetoRespuesta.toString());          
             
            
             /*for (int i = 0; i < alumnosRegistrados.length; i++){
@@ -83,7 +84,7 @@ public class NewServlet extends HttpServlet {
                        respuesta.println("<td>" + alumnosRegistrados[i].getNombre() + "</td>");
                        respuesta.println("<td>" + alumnosRegistrados[i].getDireccion()+ "</td>");
                        respuesta.println("<td>" + alumnosRegistrados[i].getCorreo()+ "</td>");
-                       respuesta.println("<td>" + alumnosRegistrados[i].getTipo()+ "</td>");
+                       respuesta.println("<td>" + alumnosRegistrados[i].getOpcion()+ "</td>");
                        respuesta.println("<td>"
                                + "<button type=\"button\" class=\"btn btn-warning\"></i>Editar</button> "
                                + "<button type=\"button\" class=\"btn btn-danger\">Eliminar</button>"
