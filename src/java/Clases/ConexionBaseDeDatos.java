@@ -10,12 +10,13 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Yosmeri C. Cruz
+ * @author brand
  */
 public class ConexionBaseDeDatos {
-        private String url="jdbc:mysql://localhost:3306/systemae";//url de MySQL
+ 
+    private String url="jdbc:mysql://localhost:3306/proyecto";//url de MySQL
     private String usuario="root";// usuario de mysql local
-    private String clave="yosmi"; 
+    private String clave="root"; 
     private Connection conexion=null;  
     
     public Connection conectar(){   
@@ -29,4 +30,5 @@ public class ConexionBaseDeDatos {
         }         
         return conexion;        
     }
+    
 }
