@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class AlumnoController {
       Alumno[] tablaALumno;
     int indiceArray;
-    /**private ConexionBaseDeDatos conectorBD;*/
+    private ConexionBaseDeDatos conectorBD;
     private Connection conexion;
     private PreparedStatement statement = null;
     private ResultSet result = null;
@@ -37,8 +37,8 @@ public class AlumnoController {
     }
     
     public void abrirConexion(){
-       /* conectorBD= new ConexionBaseDeDatos(); */
-       /* conexion=conectorBD.conectar(); */
+       conectorBD= new ConexionBaseDeDatos();
+       conexion=conectorBD.conectar(); 
     }
     public boolean guardarAlumno2(Alumno alumno){        
         String sql = "INSERT INTO Systemae.alumno(idAlumno, Profesor, seccion, codigo, correo, direccion ) "; //las tabla del sql

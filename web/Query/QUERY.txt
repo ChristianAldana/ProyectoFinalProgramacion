@@ -1,0 +1,10 @@
+CREATE TABLE `proyecto`.`alumno`(
+`idAlumno` INT NOT NULL,
+`nombre` VARCHAR(45) NOT NULL,
+`Profesor` VARCHAR(45) NOT NULL,
+`seccion` VARCHAR(45) NULL,
+`nivel` VARCHAR(45) NOT NULL,
+`codigo` VARCHAR(45) NOT NULL,
+`correo` VARCHAR(45) NOT NULL,
+`direccion` TEXT(100) NOT NULL,
+PRIMARY KEY (`idAlumno`));
