@@ -38,7 +38,6 @@ public class AlumnoController {
     }
     
     public void abrirConexion(){
-<<<<<<< HEAD
         conectorBD= new ConexionBaseDeDatos();
         conexion=conectorBD.conectar();
     }    
@@ -48,15 +47,6 @@ public class AlumnoController {
         String sql = "INSERT INTO proyecto.alumno(idAlumno, nombre, Profesor, seccion, nivel, codigo, correo, direccion) ";
              sql += " VALUES(?,?,?,?,?,?,?,?)";              
        try{     
-=======
-       conectorBD= new ConexionBaseDeDatos();
-       conexion=conectorBD.conectar(); 
-    }
-    public boolean guardarAlumno2(Alumno alumno){        
-        String sql = "INSERT INTO Systemae.alumno(idAlumno, Profesor, seccion, codigo, correo, direccion ) "; //las tabla del sql
-             sql += " VALUES( ?,?,?,?,?,?)"; 
-        try{
->>>>>>> a658a6c601dac5bf3e9c9c8d3cfab18402798afe
             abrirConexion();
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, alumno.getCodigo());
