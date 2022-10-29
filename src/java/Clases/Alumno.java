@@ -15,10 +15,10 @@ public class Alumno {
     private String nombre;
     private String correo;
     private String direccion;
-    private String opcion;
     private int codigo;
+    private int codigo1;
     
-    public Alumno(String nivel, String seccion, String profesor, String nombre, String correo, String direccion, String opcion, int codigo){
+    public Alumno(String nivel, String seccion, String profesor, String nombre, String correo, String direccion, int codigo, int codigo1){
     
         this.nivel=nivel;
         this.seccion=seccion;
@@ -27,7 +27,7 @@ public class Alumno {
         this.nombre=nombre;
         this.correo=correo;
         this.direccion=direccion;     
-        this.opcion=opcion;
+        this.codigo1= codigo1;
         
     };
 
@@ -80,14 +80,6 @@ public class Alumno {
         this.direccion = direccion;
     }
 
-    public String getOpcion() {
-        return opcion;
-    }
-
-    public void setOpcion(String opcion) {
-        this.opcion = opcion;
-    }
-
     public int getCodigo() {
         return codigo;
     }
@@ -95,6 +87,15 @@ public class Alumno {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+
+    public int getCodigo1() {
+        return codigo1;
+    }
+
+    public void setCodigo1(int codigo1) {
+        this.codigo1 = codigo1;
+    }
+    
     
     
     

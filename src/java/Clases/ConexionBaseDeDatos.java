@@ -31,4 +31,8 @@ public class ConexionBaseDeDatos {
         return conexion;        
     }
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a658a6c601dac5bf3e9c9c8d3cfab18402798afe

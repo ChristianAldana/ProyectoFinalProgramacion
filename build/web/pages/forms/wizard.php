@@ -419,9 +419,8 @@
         <div class="card">
         <div class="card-body">
         <h1>Formulario de Registro Alumnos</h1>
-        <a href="/NewServlet" > </a><br><br>
-        <form method="POST" id="form" name="form" action="NewServlet" >
-         
+        <a href="ultimo 2/ProyectoFinalProgramacion/src/java/NewServlet.java"></a>
+        <form method="POST" id="form" name="form" action="conector.php">
             <div class="form-group">
                 <label for="exampleInputName">Nivel academico</label>
                 <input class="form-control" type="text" placeholder="ingresar nivel" name="nivel" id="nivel" >
@@ -459,16 +458,29 @@
                 <option value="1">1 = Masculino</option>
                 <option value="2">2 = Femenino</option>
             </select><br>
-            
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="Formulario.html">
-                <i class="icon-docs text-success"></i>
-                 Reporte
             <button type="submit" class="btn btn-primary">Guardar</button>
               <button type="button" onclick="enviarFormularioOpcion2()" class="btn btn-success">Guardar con JS</button>
              <button type="button" onclick="borrarArrays()" class="btn btn-danger">Eliminar JS</button>
              <button type="reset" class="btn btn-danger">Cancelar</button>
-             
+             <?php
+ 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ 
+    // collect value of input field
+    $data = $_REQUEST['INSERT INTO Systemae.alumno(idAlumno, Profesor, seccion, codigo, correo, direccion )'];
+ 
+    if (empty($data)) {
+        echo "data is empty";
+    } else {
+        echo $data;
+    }
+}
+?>
+ 
+// Closing the connection.
+$conn->close();
+ 
+?>
         </form>
         
         

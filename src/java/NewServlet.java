@@ -16,15 +16,21 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @carjr
+ * @author JP
  */
 @WebServlet(urlPatterns = {"/NewServlet"})
 public class NewServlet extends HttpServlet {
     Alumno alumno;
     AlumnoController registroAlumno;
      Alumno[] alumnosRegistrados;
+<<<<<<< HEAD
+     StringBuffer objetoRespuesta = new StringBuffer();
+    
+    /**
+=======
 
 /**
+>>>>>>> a658a6c601dac5bf3e9c9c8d3cfab18402798afe
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -52,6 +58,22 @@ public class NewServlet extends HttpServlet {
            
            if(control.toUpperCase().equals("GUARDAR")){
                alumno=new Alumno(
+<<<<<<< HEAD
+               
+                request.getParameter("nivel"),
+                request.getParameter("seccion"),
+                request.getParameter("profesor"),
+                 request.getParameter("nombre"),
+                request.getParameter("correo"),
+                request.getParameter("direccion"),
+                Integer.parseInt(request.getParameter("codigo")),
+                Integer.parseInt(request.getParameter("codigo1")));  
+               
+                registroAlumno.guardarAlumno2(alumno);//almacenarlo en BD                 
+           }else if(control.toUpperCase().equals("ELIMINAR")){
+               int codigoEliminar= Integer.parseInt(request.getParameter("codigo_alumno"));
+               registroAlumno.eliminarALumno(codigoEliminar);
+=======
                 Integer.parseInt(request.getParameter("Nombre")),
                 request.getParameter("Profesor"),
                 request.getParameter("Seccion"),
@@ -63,12 +85,27 @@ public class NewServlet extends HttpServlet {
            }else if(control.toUpperCase().equals("ELIMINAR")){
                int codigoEliminar= Integer.parseInt(request.getParameter("codigo_alumno"));
                registroAlumno.eliminarAlumno(codigoEliminar);
+>>>>>>> a658a6c601dac5bf3e9c9c8d3cfab18402798afe
            }
                         
             
             registroAlumno.guardarAlumno(alumno);//almacenarlo en el array
             alumnosRegistrados= registroAlumno.getAlumnos();// consultar alumnos en el array                       
                     
+<<<<<<< HEAD
+          /* registroAlumno.getAlumnos2(objetoRespuesta);//consultar alumnos en la BD*/
+           respuesta.write(objetoRespuesta.toString());          
+            
+           
+            /*for (int i = 0; i < alumnosRegistrados.length; i++){
+                   //if(!alumnosRegistrados[i].getCodigo().isEmpty()){
+                    if(alumnosRegistrados[i].getCodigo()>0){
+                       respuesta.println("<tr><td>" + alumnosRegistrados[i].getCodigo()+ "</td>");
+                       respuesta.println("<td>" + alumnosRegistrados[i].getNombre() + "</td>");
+                       respuesta.println("<td>" + alumnosRegistrados[i].getDireccion()+ "</td>");
+                       respuesta.println("<td>" + alumnosRegistrados[i].getCorreo()+ "</td>");
+                       respuesta.println("<td>" + alumnosRegistrados[i].getOpcion()+ "</td>");
+=======
            registroAlumno.getAlumnos2(objetoRespuesta);//consultar alumnos en la BD
            respuesta.write(objetoRespuesta.toString());             
             
@@ -82,12 +119,17 @@ public class NewServlet extends HttpServlet {
                        respuesta.println("<td>" + alumnosRegistrados[i].getCodigo()+ "</td>");
                        respuesta.println("<td>" + alumnosRegistrados[i].getCorreo()+ "</td>");
                        respuesta.println("<td>" + alumnosRegistrados[i].getDireccion()+ "</td>");
+>>>>>>> a658a6c601dac5bf3e9c9c8d3cfab18402798afe
                        respuesta.println("<td>"
                                + "<button type=\"button\" class=\"btn btn-warning\"></i>Editar</button> "
                                + "<button type=\"button\" class=\"btn btn-danger\">Eliminar</button>"
                                + "</td></tr>");
                     }
+<<<<<<< HEAD
+                }*/
+=======
                 }
+>>>>>>> a658a6c601dac5bf3e9c9c8d3cfab18402798afe
         }
     }
 

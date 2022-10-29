@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package forms;
+package Clases;
 
 /**
  *
@@ -17,8 +17,9 @@ public class Alumno {
     private String direccion;
     private String opcion;
     private int codigo;
+    private int codigo1;
     
-    public Alumno(String nivel, String seccion, String profesor, String nombre, String correo, String direccion, String opcion, int codigo){
+    public Alumno(String nivel, String seccion, String profesor, String nombre, String correo, String direccion, String opcion, int codigo, int codigo1){
     
         this.nivel=nivel;
         this.seccion=seccion;
@@ -27,7 +28,7 @@ public class Alumno {
         this.nombre=nombre;
         this.correo=correo;
         this.direccion=direccion;     
-        this.opcion=opcion;
+        this.codigo1= codigo1;
         
     };
 
@@ -94,6 +95,14 @@ public class Alumno {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
+    }
+
+    public int getCodigo1() {
+        return codigo1;
+    }
+
+    public void setCodigo1(int codigo1) {
+        this.codigo1 = codigo1;
     }
     
     
