@@ -134,7 +134,6 @@ function enviarFormularioOpcion2(){
             if (XHR.readyState === XHR.DONE && XHR.status === 200) {
               console.log("response => " + XHR.response);
               //console.log("response xml=> " + XHR.responseXML);
-              document.getElementById('bodyTable').innerHTML=XHR.response;
               mostrarMensaje();
             }
           };

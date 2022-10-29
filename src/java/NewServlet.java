@@ -5,7 +5,7 @@
 
 import Clases.Alumno;
 import Clases.AlumnoController;
-/**import Clases.ConexionBaseDeDatos;*/
+import Clases.ConexionBaseDeDatos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -16,14 +16,14 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @carjr
+ * @author JP
  */
 @WebServlet(urlPatterns = {"/NewServlet"})
 public class NewServlet extends HttpServlet {
     Alumno alumno;
     AlumnoController registroAlumno;
      Alumno[] alumnosRegistrados;
-
+     StringBuffer objetoRespuesta = new StringBuffer();
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -47,50 +47,50 @@ public class NewServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter respuesta = response.getWriter()) {            
-            alumno=new Alumno(
+           
+           registroAlumno=new AlumnoController();
+           String control = request.getParameter("control");
+           
+           if(control.toUpperCase().equals("GUARDAR")){
+               alumno=new Alumno(
+               
                 request.getParameter("nivel"),
-                request.getParameter("profesor"),
                 request.getParameter("seccion"),
-                request.getParameter("nombre"),
+                request.getParameter("profesor"),
+                 request.getParameter("nombre"),
                 request.getParameter("correo"),
                 request.getParameter("direccion"),
-                request.getParameter("codigo"),
-                Integer.parseInt(request.getParameter("opcion"))
-                
-            );               
+                Integer.parseInt(request.getParameter("codigo")),
+                Integer.parseInt(request.getParameter("codigo1")));  
+               
+                registroAlumno.guardarAlumno2(alumno);//almacenarlo en BD                 
+           }else if(control.toUpperCase().equals("ELIMINAR")){
+               int codigoEliminar= Integer.parseInt(request.getParameter("codigo_alumno"));
+               registroAlumno.eliminarALumno(codigoEliminar);
+           }
                         
-            if(registroAlumno==null){
-                 registroAlumno=new AlumnoController();
-            }
-           
+            
             registroAlumno.guardarAlumno(alumno);//almacenarlo en el array
-           /* 
-           if(registroAlumno.guardarAlumno2(alumno)){//almacenarlo en BD
-               respuesta.println(1);
-           }else{
-               respuesta.println(0);
-           } */
-            alumnosRegistrados= registroAlumno.getAlumnos();           
+            alumnosRegistrados= registroAlumno.getAlumnos();// consultar alumnos en el array                       
+                    
+          /* registroAlumno.getAlumnos2(objetoRespuesta);//consultar alumnos en la BD*/
+           respuesta.write(objetoRespuesta.toString());          
+            
            
-            for (int i = 0; i < alumnosRegistrados.length; i++){
+            /*for (int i = 0; i < alumnosRegistrados.length; i++){
+                   //if(!alumnosRegistrados[i].getCodigo().isEmpty()){
                     if(alumnosRegistrados[i].getCodigo()>0){
-
-                       respuesta.println("<tr><td>" + alumnosRegistrados[i].getNivel()+ "</td>");  
-                       respuesta.println("<tr><td>" + alumnosRegistrados[i].getSeccion()+ "</td>");
-                       respuesta.println("<tr><td>" + alumnosRegistrados[i].getProfesor()+ "</td>");  
                        respuesta.println("<tr><td>" + alumnosRegistrados[i].getCodigo()+ "</td>");
-                       respuesta.println("<td><td>" + alumnosRegistrados[i].getNombre() + "</td>");
-                       respuesta.println("<td><td>" + alumnosRegistrados[i].getDireccion()+ "</td>");
-                       respuesta.println("<td><td>" + alumnosRegistrados[i].getCorreo()+ "</td>");
-                       respuesta.println("<td><td>" + alumnosRegistrados[i].getOpcion()+ "</td>");
-                       ;
+                       respuesta.println("<td>" + alumnosRegistrados[i].getNombre() + "</td>");
+                       respuesta.println("<td>" + alumnosRegistrados[i].getDireccion()+ "</td>");
+                       respuesta.println("<td>" + alumnosRegistrados[i].getCorreo()+ "</td>");
+                       respuesta.println("<td>" + alumnosRegistrados[i].getOpcion()+ "</td>");
                        respuesta.println("<td>"
                                + "<button type=\"button\" class=\"btn btn-warning\"></i>Editar</button> "
-                               + "<button type=\"button\" class=\"btn btn-danger\" onclick=\"eliminarAlumno()\">Eliminar</button>"
+                               + "<button type=\"button\" class=\"btn btn-danger\">Eliminar</button>"
                                + "</td></tr>");
                     }
-                }
-            //respuesta.println(1);
+                }*/
         }
     }
 
